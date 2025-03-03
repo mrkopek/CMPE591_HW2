@@ -251,7 +251,7 @@ def test():
         device = torch.device("cuda")
     else:
         device = torch.device("cpu")
-    agent = DQN_Agent(6, 8,device=device)
+    agent = DQN_Agent(6, 8,device=device, epsilon=0)
     agent.policy_net = torch.jit.load("hw2_26000_0.001.pt").to(device)
     agent.policy_net.eval()
     rewards = []
